@@ -4,5 +4,5 @@ applications:
   instances: 1
   domain: mybluemix.net
   name: Open Source Analytics Ecosystem
-  host: open-source-analytics-ecosystem1
+  host: open-source-analytics-ecosystem
   disk_quota: 1024M
