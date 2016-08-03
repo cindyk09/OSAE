@@ -20,15 +20,39 @@
 
  .which-are-you{background-color: #F05F40}
 
+#partners{
+  background-color:#D6D6D6 ;
+}
+
+.business-text {
+ color: white;
+ font-size: 24px;
+ font-weight: bold;
+}
+
  #business-leader{
    width: 350px;
+
+   filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+   transition: all 0.5s linear;
  }
  #business-leader:hover {
-
-    filter: alpha(opacity=0);
-    opacity: 0.5;
+   filter: alpha(opacity=0);
+   opacity: 0.5;
+   background-color: rgb(38,74,96);
+   filter: blur(0px);
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
 
 }
+
+
 
  .bg-primary{background-color:#D6D6D6}.bg-dark{background-color:#222;color:#fff}
 
