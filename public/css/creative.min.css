@@ -106,13 +106,16 @@ aside{
  }
 
 #business-leader{
-  width: 350px;
-  filter: blur(3px);
- -webkit-filter: blur(3px);
- -moz-filter: blur(3px);
- -o-filter: blur(3px);
- -ms-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(38,74,96,0.7);
   transition: all 0.5s linear;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+
   }
 #business-leader:hover {
   filter: alpha(opacity=0);
