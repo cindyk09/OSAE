@@ -13,12 +13,7 @@ var app = express();
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 // get the app environment from Cloud Foundry
-// var appEnv = cfenv.getAppEnv();
-// start server on the specified port and binding host
-// app.listen(appEnv.port, '0.0.0.0', function() {
-//   // print a message when the server starts listening
-//   console.log("server starting on " + appEnv.url);
-// });
+
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
   // sets the mime type based n the file extname
@@ -31,5 +26,13 @@ app.get('/', function(req, res){
 app.get('/application',function(req,res){
   res.sendFile(path.join(__dirname+'/public/application.html'));
 });
-app.listen(3000);
-console.log("Running at Port 3000");
+
+var appEnv = cfenv.getAppEnv();
+// start server on the specified port and binding host
+app.listen(appEnv.port, '0.0.0.0', function() {
+  // print a message when the server starts listening
+  console.log("server starting on " + appEnv.url);
+});
+
+// app.listen(3000);
+// console.log("Running at Port 3000");
