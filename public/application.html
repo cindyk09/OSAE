@@ -20,7 +20,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">OSAE</a>
+                <a class="navbar-brand page-scroll" href="/">OSAE</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,24 +71,27 @@
               </li>
               <li><div class="divider"></div></li>
               <p>Please provide the name, title, and email contact information of all relevant parties.</p>
-              <li>
-                <p class="left">
-                  <label for="contact_name">Contact Name<span class="req">*</span></label>
-                  <input type="text" name="contact_name" placeholder="John Doe" />
-                </p>
-                <p class="pull-right">
-                  <label for="contact_role">Contact Role<span class="req">*</span></label>
-                  <input type="text" name="contact_role" placeholder="Engineer" />
-                </p>
-              </li>
+              <div id="contacts">
+                <li>
+                  <p class="left">
+                    <label for="contact_name">Contact Name<span class="req">*</span></label>
+                    <input type="text" name="contact_name_1" placeholder="John Doe" />
+                  </p>
+                  <p class="pull-right">
+                    <label for="contact_role">Contact Role<span class="req">*</span></label>
+                    <input type="text" name="contact_role_1" placeholder="Engineer" />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <label for="company">Contact Email <span class="req">*</span></label>
+                    <input type="email" name="contact_email_1" placeholder="first.last@company.com" />
+                  </p>
+                </li>
+              </div>
 
-              <li>
-                <p>
-                  <label for="company">Contact Email <span class="req">*</span></label>
-                  <input type="email" name="website" placeholder="first.last@company.com" />
-                </p>
-              </li>
-              <input type="button" name="add_contact" value="+" onclick="increaseBtnOnclick()"/>
+              <input id="contact_button" type="button" name="add_contact" value="+"/>
+
               <li><div class="divider"></div></li>
               <li>
                 <label for="comments">comments</label>
@@ -103,6 +106,8 @@
         </div>
     </div>
   </div>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/application.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="js/creative.min.js"></script>
   </body>
