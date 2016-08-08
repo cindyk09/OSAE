@@ -42,9 +42,6 @@ app.get('/application',function(req,res){
   res.sendFile(path.join(__dirname+'/public/application.html'));
 });
 
-app.get('/sitemap',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/sitemap.html'));
-});
 
 
 app.listen(3000);
