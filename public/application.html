@@ -44,17 +44,30 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="row">
-      <div class="container">
-        <div class="row header">
-          <h1>Open Source Analytics Ecosystem &nbsp;</h1>
+      <div class="container ">
+        <div class="row header text-center">
           <h2> Partner Certification Application</h2>
-          <h3>Fill out the form below!</h3>
         </div>
+        <div class="row header">
+          <h3 align="center">Prerequisites</h3>
+          <p>
+            The IBM Open Platform for Apache Spark Partner certification offering has the following prerequisites
+            <ol>
+              <li>The certification must be performed on the IBM Open Platform for non-production environment native installation available from the <a href="http://www.ibm.com/support/knowledgecenter/SSPT3X_4.2.0/com.ibm.swg.im.infosphere.biginsights.install.doc/doc/installing_icnav.html" target="_blank">IBM Analytics Download Hadoop</a> trials page.</li>
+              <li>Partner application must be Apache Sparks 1.6.1 compliant or above
+</li>
+              <li>The Partner application must execute in a Yarn deployment model only i.e. cannot be tested in a standalone deployment model or configured on Mesos
+</li>
+            </ol>
+          </p>
+
+        </div>
+
+          <h3 align="center">Fill out the form below!</h3>
+
         <div class="row body">
           <form action="#">
             <ul>
-
               <li>
                 <p class="left">
                   <label for="company_name">Company Name<span class="req">*</span></label>
@@ -106,9 +119,10 @@
               </li>
             </ul>
           </form>
-        </div>
-    </div>
-  </div>
+
+
+      </div>
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="js/application.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
