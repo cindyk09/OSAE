@@ -63,9 +63,8 @@
 
         </div>
 
-          <h3 align="center">Fill out the form below!</h3>
-
         <div class="row body">
+          <h3 align="center">Fill out the form below.</h3>
           <form action="#">
             <ul>
               <li>
@@ -81,11 +80,11 @@
 
               <li>
                 <p>
-                  <label for="company">Company Website </label>
+                  <label for="website">Company Website </label>
                   <input type="text" name="website" placeholder="www.IBM.com" />
                 </p>
               </li>
-              <li><div class="divider"></div></li>
+          <li><div class="divider"></div></li>
               <p>Please provide the name, title, and email contact information of all relevant parties.</p>
               <div id="contacts">
                 <li>
@@ -106,9 +105,43 @@
                 </li>
               </div>
 
-              <input id="contact_button" type="button" name="add_contact" value="+"/>
+              <!-- <input id="contact_button" type="button" name="add_contact" value="+" onclick="contact_button()"/> -->
+              <a id="contact_button">Add Contact</a>
 
-              <li><div class="divider"></div></li>
+          <li><div class="divider"></div></li>
+              <p>
+                Please provide all other relevant information about the product in the comments section below.
+              </p>
+              <li>
+                <p class="left">
+                  <label for="product_name">Product Name<span class="req">*</span></label>
+                  <input type="text" name="product_name" placeholder="" />
+                </p>
+                <p class="pull-right">
+                  <label for="product_version">Product Version<span class="req">*</span></label>
+                  <input type="text" name="product_version" placeholder="" />
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="product_date">Date of Product Availability</label>
+                  <input type="date" name="product_date" placeholder="" />
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="sla">What Service Level Agreement (SLAs) are currently provided for supported customers of this product:</label>
+                  <input type="text" name="sla" placeholder="" />
+                </p>
+              </li>
+              <li id="os_class">
+                <label for="os_info_1">Operating System(s) supported:</label>
+                <input type="text" name="os_info_1" placeholder="OS distribution, version" />
+                <a id="os_button">Add OS,Version</a>
+              </li>
+
+          <li><div class="divider"></div></li>
+
               <li>
                 <label for="comments">comments</label>
                 <textarea cols="46" rows="3" name="comments"></textarea>
@@ -119,7 +152,6 @@
               </li>
             </ul>
           </form>
-
 
       </div>
 
