@@ -10,7 +10,7 @@ $(document).ready(function() {
         });
         $(document).on('click', '#remScnt', function() {
 
-                if( i > 2 ) {
+                if( i > 1 ) {
                         $(this).parents('div').first().remove();
                         i--;
                 }
