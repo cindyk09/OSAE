@@ -37,8 +37,8 @@ app.get('/', function(req, res){
   })
 });
 
-app.get('/application',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/application.html'));
+app.get('/certification',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/certification.html'));
 });
 
 
