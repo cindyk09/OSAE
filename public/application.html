@@ -44,44 +44,71 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <!-- Header Start -->
       <div class="container ">
         <div class="row header text-center">
           <h2> Partner Certification Application</h2>
-        </div>
+          <p>
+          The Open Source Analytics Ecosystem is thriving and IBM has standardized on the Apache Spark open source big data processing framework sophisticated analytic capabilities.
+            <br><br>
+          Business Partners are critical to IBM’s OSAE successes. This program allows you to demonstrate your competency in the Apache Spark processing analytics framework using the IBM Open Platform.
+         </p>
+      </div>
+    <!-- Header Ends -->
+
+        <!--Certification Prerequisites Start-->
         <div class="row header">
-          <h3 align="center">Prerequisites</h3>
+          <h3 align="center">Certification Prerequisites</h3>
           <p>
             The IBM Open Platform for Apache Spark Partner certification offering has the following prerequisites
             <ol>
               <li>The certification must be performed on the IBM Open Platform for non-production environment native installation available from the <a href="http://www.ibm.com/support/knowledgecenter/SSPT3X_4.2.0/com.ibm.swg.im.infosphere.biginsights.install.doc/doc/installing_icnav.html" target="_blank">IBM Analytics Download Hadoop</a> trials page.</li>
-              <li>Partner application must be Apache Sparks 1.6.1 compliant or above
-</li>
-              <li>The Partner application must execute in a Yarn deployment model only i.e. cannot be tested in a standalone deployment model or configured on Mesos
-</li>
+              <li>Partner application must be Apache Sparks 1.6.1 compliant or above</li>
+              <li>The Partner application must execute in a Yarn deployment model only i.e. cannot be tested in a standalone deployment model or configured on Mesos</li>
             </ol>
           </p>
+        </div>
+        <!--Certification Prerequisites End-->
 
+        <!-- Apache Spark Partner community -->
+        <div class="row header">
+          <h3 align="center">Apache Spark Partner Community</h3>
+          <p>
+            A premium Partner enablement engineer will be available to support the IOP installation process, if necessary, once all IBM Open Platform prerequisites are satisfied.
+            <br><br>
+            IBM will advertise the Partner commercial logotype on <a href="http://www.ibm.com/spark" target="_blank">www.ibm.com/spark</a> web site upon the completion and review of the Apache Spark Partner certification using the IBM Open Platform.
+            <br><br>
+            Once the Partner application is deemed Apache Spark Certified on the IBM Open Platform, the Partner agrees to the following:
+            <ol>
+              <li>The Partner commits to re-certify in a timely fashion on subsequent releases of IBM Open Platform which will include major revisions to Apache Spark ecosystem component.</li>
+              <li>Promote IBM Open Source Analytics Ecosystem logotype on their website.</li>
+            </ol>
+          </p>
         </div>
 
+        <!--  -->
+
+        <!-- Form Starts -->
         <div class="row body">
-          <h3 align="center">Fill out the form below.</h3>
+          <h3 align="center">Fill out the form below</h3>
           <form action="#">
             <ul>
               <li>
                 <p class="left">
                   <label for="company_name">Company Name<span class="req">*</span></label>
-                  <input type="text" name="company_name" placeholder="IBM" />
+                  <input type="text" name="company_name" placeholder="IBM" required />
                 </p>
                 <p class="pull-right">
                   <label for="company_address">Company Address<span class="req">*</span></label>
-                  <input type="text" name="company_address" placeholder="Smith" />
+                  <input type="text" name="company_address" placeholder="123 Main St. New York, NY 10001" required/>
                 </p>
               </li>
 
               <li>
                 <p>
                   <label for="website">Company Website </label>
-                  <input type="text" name="website" placeholder="www.IBM.com" />
+                  <input type="text" name="website" placeholder="www.ibm.com" required />
                 </p>
               </li>
           <li><div class="divider"></div></li>
@@ -152,8 +179,8 @@
               </li>
             </ul>
           </form>
-
       </div>
+      <!-- Form Ends -->
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="js/application.js"></script>
