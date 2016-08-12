@@ -306,8 +306,12 @@ header .header-content .header-content-inner p{
   font-size: 24px;
   font-weight: bold;
   margin: auto;
-
 }
+
+.persona, p{
+  color: #1d3649;
+}
+
 .bg-primary{
   background-color:#D6D6D6
   }
