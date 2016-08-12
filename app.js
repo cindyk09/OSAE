@@ -11,7 +11,7 @@ var path = require('path');
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
-// var cfenv = require('cfenv');
+var cfenv = require('cfenv');
 // create a new express server
 var app = express();
 
@@ -46,12 +46,12 @@ app.get('/arimo',function(req,res){
 });
 
 
-// var appEnv = cfenv.getAppEnv();
-// // start server on the specified port and binding host
-// app.listen(appEnv.port, '0.0.0.0', function() {
-//   // print a message when the server starts listening
-//   console.log("server starting on " + appEnv.url);
-// });
+var appEnv = cfenv.getAppEnv();
+// start server on the specified port and binding host
+app.listen(appEnv.port, '0.0.0.0', function() {
+  // print a message when the server starts listening
+  console.log("server starting on " + appEnv.url);
+});
 
-app.listen(3000);
-console.log("Running at Port 3000");
+// app.listen(3000);
+// console.log("Running at Port 3000");
