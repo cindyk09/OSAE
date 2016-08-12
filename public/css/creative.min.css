@@ -348,3 +348,8 @@ header .header-content .header-content-inner p{
   padding: 0 10px;
   margin-top: 25px;
 }
+
+.arimo-image{
+  height: auto;
+  width: auto;
+}

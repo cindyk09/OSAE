@@ -41,6 +41,10 @@ app.get('/certification',function(req,res){
   res.sendFile(path.join(__dirname+'/public/certification.html'));
 });
 
+app.get('/arimo',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/arimo.html'));
+});
+
 
 // var appEnv = cfenv.getAppEnv();
 // // start server on the specified port and binding host
