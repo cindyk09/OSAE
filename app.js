@@ -11,9 +11,10 @@ var path = require('path');
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
-var cfenv = require('cfenv');
+// var cfenv = require('cfenv');
 // create a new express server
 var app = express();
+
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
@@ -37,21 +38,23 @@ app.get('/', function(req, res){
   })
 });
 
-app.get('/certification',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/certification.html'));
-});
+// app.get('/certification',function(req,res){
+//   res.sendFile(path.join(__dirname+'/public/certification/certification.html'));
+// });
+
+app.use('/certification', require('./public/certification/certificationRoute'));
 
 app.get('/arimo',function(req,res){
   res.sendFile(path.join(__dirname+'/public/arimo.html'));
 });
 
 
-var appEnv = cfenv.getAppEnv();
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
-});
+// var appEnv = cfenv.getAppEnv();
+// // start server on the specified port and binding host
+// app.listen(appEnv.port, '0.0.0.0', function() {
+//   // print a message when the server starts listening
+//   console.log("server starting on " + appEnv.url);
+// });
 
-// app.listen(3000);
-// console.log("Running at Port 3000");
+app.listen(3000);
+console.log("Running at Port 3000");
