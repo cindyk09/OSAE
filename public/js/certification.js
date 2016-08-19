@@ -25,7 +25,7 @@ $(document).ready(function() {
         $(document).on('click', '#remOS', function() {
                 text_box='#os_info_'+a
                 debugger;
-                if( a > 2 ) {
+                if( a > 1 ) {
                         $(this).parents(text_box).remove();
                         a--;
                 }
