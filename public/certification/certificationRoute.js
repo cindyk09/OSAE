@@ -23,7 +23,7 @@ router.post('/',function(req,res){
   // // loop ends for contact
   // company_name=req.body.company_name,
   // company_name=req.body.company_name,
-  res.send(redirect: '/'+company_name);
+  // res.send(redirect: '/'+company_name);
 });
 
 
