@@ -33,6 +33,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
+// using hogan.js as a lightweight template engine - most of our html files are static.
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine', 'ejs');
 
 // get the app environment from Cloud Foundry
 // var appEnv = cfenv.getAppEnv();
@@ -55,10 +58,11 @@ app.get('/', function(req, res){
 
 
 app.use('/certification', require('./public/certification/certificationRoute'));
+app.use('/partners', require('./public/partners/partnersRoute'));
 
-app.get('/:company_name',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/arimo.html'));
-});
+// app.get('/partners/:company_name',function(req,res){
+//   res.sendFile(path.join(__dirname+'/public/arimo.html'));
+// });
 
 // var appEnv = cfenv.getAppEnv();
 // // start server on the specified port and binding host
