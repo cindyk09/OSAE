@@ -30,7 +30,6 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
-
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 // using hogan.js as a lightweight template engine - most of our html files are static.
@@ -49,20 +48,23 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
   // sets the mime type based n the file extname
-  res.sendFile(__dirname + '/index.html', function(err) {
+  res.sendFile(__dirname + 'index.html', function(err) {
     if (err) {
       res.status(500).send(err);
     }
   })
+  // use this to autopopulate the partner cards in INDEX.HTML
+  // res.render(path.join(__dirname,'index.ejs'),function(err) {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   }
+  // });
 });
 
 
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
 
-// app.get('/partners/:company_name',function(req,res){
-//   res.sendFile(path.join(__dirname+'/public/arimo.html'));
-// });
 
 // var appEnv = cfenv.getAppEnv();
 // // start server on the specified port and binding host
