@@ -37,7 +37,7 @@ app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
 
 // get the app environment from Cloud Foundry
-// var appEnv = cfenv.getAppEnv();
+var appEnv = cfenv.getAppEnv();
 
 // start server on the specified port and binding host
 // app.listen(appEnv.port, '0.0.0.0', function() {
@@ -69,13 +69,13 @@ app.use('/partners', require('./public/partners/partnersRoute'));
 //   res.sendFile(path.join(__dirname+'/public/arimo.html'));
 // });
 
-// var appEnv = cfenv.getAppEnv();
-// // start server on the specified port and binding host
-// app.listen(appEnv.port, '0.0.0.0', function() {
-//   // print a message when the server starts listening
-//   console.log("server starting on " + appEnv.url);
-// });
+var appEnv = cfenv.getAppEnv();
+// start server on the specified port and binding host
+app.listen(appEnv.port, '0.0.0.0', function() {
+  // print a message when the server starts listening
+  console.log("server starting on " + appEnv.url);
+});
 
 
-app.listen(3000);
-console.log("Running at Port 3000");
+// app.listen(3000);
+// console.log("Running at Port 3000");
