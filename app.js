@@ -30,12 +30,14 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
-
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
+// using hogan.js as a lightweight template engine - most of our html files are static.
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine', 'ejs');
 
 // get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
+// var appEnv = cfenv.getAppEnv();
 
 // start server on the specified port and binding host
 // app.listen(appEnv.port, '0.0.0.0', function() {
@@ -46,30 +48,34 @@ var appEnv = cfenv.getAppEnv();
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
   // sets the mime type based n the file extname
-  res.sendFile(__dirname + '/index.html', function(err) {
+  res.sendFile(__dirname + 'index.html', function(err) {
     if (err) {
       res.status(500).send(err);
     }
   })
+  // use this to autopopulate the partner cards in INDEX.HTML
+  // res.render(path.join(__dirname,'index.ejs'),function(err) {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   }
+  // });
 });
 
 
 app.use('/certification', require('./public/certification/certificationRoute'));
-
-app.get('/:company_name',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/arimo.html'));
-});
-
-var appEnv = cfenv.getAppEnv();
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
-});
+app.use('/partners', require('./public/partners/partnersRoute'));
 
 // app.get('/partners/:company_name',function(req,res){
 //   res.sendFile(path.join(__dirname+'/public/arimo.html'));
 // });
 
-// app.listen(3000);
-// console.log("Running at Port 3000");
+// var appEnv = cfenv.getAppEnv();
+// // start server on the specified port and binding host
+// app.listen(appEnv.port, '0.0.0.0', function() {
+//   // print a message when the server starts listening
+//   console.log("server starting on " + appEnv.url);
+// });
+
+
+app.listen(3000);
+console.log("Running at Port 3000");
