@@ -67,6 +67,9 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
+// app.get('/partners/:company_name',function(req,res){
+//   res.sendFile(path.join(__dirname+'/public/arimo.html'));
+// });
 
 // app.listen(3000);
 // console.log("Running at Port 3000");

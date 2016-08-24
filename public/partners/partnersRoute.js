@@ -12,7 +12,7 @@ router.get('/:company_name',function(req,res){
   client.hgetall(company,function(err,obj){
     company_info=obj;
     console.log(company_info);
-    res.render(path.join(__dirname,'partner_template.ejs'),{company_name: company,company_address: company_info['company address'],company_website: company_info['company website'],mission_statement: company_info['mission statement']});
+    res.render('partner_template.ejs',{company_name: company,company_address: company_info['company address'],company_website: company_info['company website'],mission_statement: company_info['mission statement']});
     // {mission_statement: company_info.mission_statement}
   });
 
