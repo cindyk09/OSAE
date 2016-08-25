@@ -9,10 +9,10 @@
 var express = require('express');
 var path = require('path');
 // var bodyParser = require('body-parser');
-var busboy = require('express-busboy');
 var redis = require('redis');
 var config= require('./config');
 var pkgcloud = require('pkgcloud-bluemix-objectstorage');
+
 // create a new redis client and connect to our local redis instance
 var client = redis.createClient(config.port,config.hostname);
 client.auth(config.password);
@@ -53,13 +53,6 @@ var cfenv = require('cfenv');
 // create a new express server
 var app = express();
 
-busboy.extend(app, {
-    upload: true
-    // path: '/path/to/save/files',
-    // allowedPath: /./
-});
-
-
 // app.use( bodyParser.json() );       // to support JSON-encoded bodies
 // app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //   extended: true
@@ -72,17 +65,9 @@ app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
 
 
-// cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
-var cfenv = require('cfenv');
+
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
-
-// start server on the specified port and binding host
-// app.listen(appEnv.port, '0.0.0.0', function() {
-//   // print a message when the server starts listening
-//   console.log("server starting on " + appEnv.url);
-// });
 
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
@@ -100,6 +85,9 @@ app.get('/', function(req, res){
   // });
 });
 
+app.get('/servers',function(req, res) {
+  res.sendFile(__dirname + '/public/server.html')
+});
 
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
@@ -114,5 +102,5 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
-// app.listen(3000);
-// console.log("Running at Port 3000");
+app.listen(3000);
+console.log("Running at Port 3000");

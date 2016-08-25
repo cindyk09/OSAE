@@ -328,6 +328,10 @@ header .header-content .header-content-inner p{
   color: #1d3649;
   }
 
+#server{
+  margin-top: 100px;
+}
+
 /*partners container*/
 #partners{
   background-color:#D6D6D6;
