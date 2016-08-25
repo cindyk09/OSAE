@@ -45,6 +45,11 @@ module.exports={storage: storageClient,redis_client: client};
 
 
 
+// cfenv provides access to your Cloud Foundry environment
+// for more info, see: https://www.npmjs.com/package/cfenv
+var cfenv = require('cfenv');
+
+
 // create a new express server
 var app = express();
 
@@ -99,6 +104,7 @@ app.get('/', function(req, res){
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
 
+
 // TODO ALSO WHEN PUSHING TO BLUEMIX, CHANGE config.js file. Some parts of code need to be changed from 'public' to 'internal'
 
 var appEnv = cfenv.getAppEnv();
@@ -108,6 +114,5 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
-//
 // app.listen(3000);
 // console.log("Running at Port 3000");
