@@ -58,16 +58,9 @@ var app = express();
 //   extended: true
 // }));
 
-
-
 app.use(express.static(__dirname + '/public')); // serve the files out of ./public as our main files
 app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
-
-
-
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
 
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
@@ -95,6 +88,7 @@ app.use('/partners', require('./public/partners/partnersRoute'));
 
 // TODO ALSO WHEN PUSHING TO BLUEMIX, CHANGE config.js file. Some parts of code need to be changed from 'public' to 'internal'
 
+// get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
