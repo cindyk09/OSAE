@@ -8,17 +8,40 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser');
+var busboy = require('express-busboy');
 var redis = require('redis');
-
+var config= require('./config');
+var pkgcloud = require('pkgcloud-bluemix-objectstorage');
 // create a new redis client and connect to our local redis instance
-var client = redis.createClient();
-module.exports=client;
+var client = redis.createClient(config.port,config.hostname);
+client.auth(config.password);
 // if an error occurs, print it to the console
 client.on('error', function (err) {
     console.log("Error " + err);
 });
+// module.exports=client;
 
+// create a new OBJECT STORAGE client and connect accordingly through config file.
+// this is for storing company logos / images only.
+
+// var storageClient = pkgcloud.storage.createClient(config);
+//
+// // Authenticate to OpenStack
+//      storageClient.auth(function (error) {
+//         if (error) {
+//             console.error("storageClient.auth() : error creating storage client: ", error);
+//         }
+//         else {
+//             // Print the identity object which contains your Keystone token.
+//             console.log("storageClient.auth() : created storage client: ");
+//             // + JSON.stringify(storageClient._identity)
+//         }
+//
+//     });
+var storageClient;
+//export object storage client and redis client -> used in routes
+module.exports={storage: storageClient,redis_client: client};
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
@@ -26,13 +49,22 @@ client.on('error', function (err) {
 
 // create a new express server
 var app = express();
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
-// serve the files out of ./public as our main files
-app.use(express.static(__dirname + '/public'));
-// using hogan.js as a lightweight template engine - most of our html files are static.
+
+busboy.extend(app, {
+    upload: true
+    // path: '/path/to/save/files',
+    // allowedPath: /./
+});
+
+
+// app.use( bodyParser.json() );       // to support JSON-encoded bodies
+// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+//   extended: true
+// }));
+
+
+
+app.use(express.static(__dirname + '/public')); // serve the files out of ./public as our main files
 app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
 
@@ -65,6 +97,7 @@ app.get('/', function(req, res){
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
 
+// TODO ALSO WHEN PUSHING TO BLUEMIX, CHANGE config.js file. Some parts of code need to be changed from 'public' to 'internal'
 
 // var appEnv = cfenv.getAppEnv();
 // // start server on the specified port and binding host
