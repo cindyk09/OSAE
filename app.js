@@ -10,7 +10,7 @@ var express = require('express');
 var path = require('path');
 // var bodyParser = require('body-parser');
 var redis = require('redis');
-var config= require('./config');
+// var config= require('./config');
 var pkgcloud = require('pkgcloud-bluemix-objectstorage');
 
 // create a new redis client and connect to our local redis instance
