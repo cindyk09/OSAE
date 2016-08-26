@@ -10,7 +10,7 @@ var express = require('express');
 var path = require('path');
 // var bodyParser = require('body-parser');
 var redis = require('redis');
-// var config= require('./config');
+var config= require('./config');
 var pkgcloud = require('pkgcloud-bluemix-objectstorage');
 
 // create a new redis client and connect to our local redis instance
@@ -66,7 +66,7 @@ app.set('view engine', 'ejs');
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
->>>>>>> c577bf4b5ef801a8e99b0102a9369a667e13ec12
+
 
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and
@@ -91,17 +91,6 @@ app.get('/servers',function(req, res) {
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
 
-<<<<<<< HEAD
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
-
-});
-=======
->>>>>>> c577bf4b5ef801a8e99b0102a9369a667e13ec12
 
 // TODO ALSO WHEN PUSHING TO BLUEMIX, CHANGE config.js file. Some parts of code need to be changed from 'public' to 'internal'
 
