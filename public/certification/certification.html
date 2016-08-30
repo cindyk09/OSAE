@@ -57,37 +57,50 @@
       </div>
     <!-- Header Ends -->
 
-        <!--Certification Prerequisites Start-->
-        <div class="row header">
-          <h3 align="center">Certification Prerequisites</h3>
-          <p>
-            The IBM Open Platform for Apache Spark Partner certification offering has the following prerequisites
-            <ol>
-              <li>The certification must be performed on the IBM Open Platform for non-production environment native installation available from the <a href="http://www.ibm.com/support/knowledgecenter/SSPT3X_4.2.0/com.ibm.swg.im.infosphere.biginsights.install.doc/doc/installing_icnav.html" target="_blank">IBM Analytics Download Hadoop</a> trials page.</li>
-              <li>Partner application must be Apache Sparks 1.6.1 compliant or above</li>
-              <li>The Partner application must execute in a Yarn deployment model only i.e. cannot be tested in a standalone deployment model or configured on Mesos</li>
-            </ol>
-          </p>
-        </div>
-        <!--Certification Prerequisites End-->
+    <!--Certification Prerequisites Start-->
+    <div class="row header">
+      <h3 align="center">Certification Prerequisites</h3>
+      <p>
+        The IBM Open Platform for Apache Spark Partner certification offering has the following prerequisites
+        <ol>
+          <li>The certification must be performed on the IBM Open Platform for non-production environment native installation available from the <a href="http://www.ibm.com/support/knowledgecenter/SSPT3X_4.2.0/com.ibm.swg.im.infosphere.biginsights.install.doc/doc/installing_icnav.html" target="_blank">IBM Analytics Download Hadoop</a> trials page.</li>
+          <li>Partner application must be Apache Sparks 1.6.1 compliant or above</li>
+          <li>The Partner application must execute in a Yarn deployment model only i.e. cannot be tested in a standalone deployment model or configured on Mesos</li>
+        </ol>
+      </p>
+    </div>
+    <!--Certification Prerequisites End-->
 
-        <!-- Apache Spark Partner community Starts -->
-        <div class="row header">
-          <h3 align="center">Apache Spark Partner Community</h3>
-          <p>
-            A premium Partner enablement engineer will be available to support the IOP installation process, if necessary, once all IBM Open Platform prerequisites are satisfied.
-            <br><br>
-            IBM will advertise the Partner commercial logotype on <a href="http://www.ibm.com/spark" target="_blank">www.ibm.com/spark</a> web site upon the completion and review of the Apache Spark Partner certification using the IBM Open Platform.
-            <br><br>
-            Once the Partner application is deemed Apache Spark Certified on the IBM Open Platform, the Partner agrees to the following:
-            <ol>
-              <li>The Partner commits to re-certify in a timely fashion on subsequent releases of IBM Open Platform which will include major revisions to Apache Spark ecosystem component.</li>
-              <li>Promote IBM Open Source Analytics Ecosystem logotype on their website.</li>
-            </ol>
-          </p>
-        </div>
+    <!-- Apache Spark Partner community Starts -->
+    <div class="row header">
+      <h3 align="center">Apache Spark Partner Community</h3>
+      <p>
+        A premium Partner enablement engineer will be available to support the IOP installation process, if necessary, once all IBM Open Platform prerequisites are satisfied.
+        <br><br>
+        IBM will advertise the Partner commercial logotype on <a href="http://www.ibm.com/spark" target="_blank">www.ibm.com/spark</a> web site upon the completion and review of the Apache Spark Partner certification using the IBM Open Platform.
+        <br><br>
+        Once the Partner application is deemed Apache Spark Certified on the IBM Open Platform, the Partner agrees to the following:
+        <ol>
+          <li>The Partner commits to re-certify in a timely fashion on subsequent releases of IBM Open Platform which will include major revisions to Apache Spark ecosystem component.</li>
+          <li>Promote IBM Open Source Analytics Ecosystem logotype on their website.</li>
+        </ol>
+      </p>
+    </div>
+    <!--Apache Spark Partner community Ends  -->
 
-        <!--Apache Spark Partner community Ends  -->
+    <!--IBM Open Platform installation Starts-->
+    <div class="row header">
+      <h3 align="center">IBM Open Platform installation </h3>
+      <p>
+        The IBM Open Platform for Apache Spark Partner certification offering has the following prerequisites
+
+        <ol>
+          <li>Please provide the installation log output after the IBM Open Platforn is successfully installed.</li>
+          <li>Submit the SparkPi example over YARN and provide the log output</li>
+        </ol>
+      </p>
+    </div>
+    <!--IBM Open Platform installation Ends-->
 
         <!-- Form Starts -->
         <div class="row body">
@@ -97,66 +110,102 @@
               <li>
                 <p class="left">
                   <label for="company_name">Company Name<span class="req">*</span></label>
-                  <input type="text" name="company_name"/>
+                  <input type="text" name="company_name" required/>
                 </p>
                 <p class="pull-right">
-                  <label for="company_address">Company Address<span class="req">*</span></label>
-                  <input type="text" name="company_address"/>
+                  <label for="website">Company Website <span class="req">*</span></label>
+                  <input type="url" name="website" required>
+                </p>
+              </li>
+              <li>
+                <p class="left">
+                  <label for="company_address">Address Line 1<span class="req">*</span></label>
+                  <input type="text" name="company_address1" required/>
+                </p>
+                <p class="pull-right">
+                  <label for="company_address">Address Line 2<span class="req"></span></label>
+                  <input type="text" name="company_address2" required/>
+                </p>
+              </li>
+              <li>
+                <p class="left">
+                  <label for="company_address">City<span class="req">*</span></label>
+                  <input type="text" name="city" required/>
+                </p>
+                <p class="pull-right">
+                  <label for="company_address">State/Province<span class="req">*</span></label>
+                  <input type="text" name="state" required/>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="company_address">Zip Code<span class="req">*</span></label>
+                  <input type="text" name="zip_code" required/>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="file">Company Logo<span class="req">*</span></label>
+                  <input type="file" name="logo" required/>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="mission_statement">Company's Mission Statement<span class="req">*</span></label>
+                  <textarea cols="46" rows="3" name="mission_statement" required></textarea>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="description">Company's Description<span class="req">*</span></label>
+                  <textarea cols="46" rows="3" name="description" placeholder="Brief description on your company or startup" required></textarea>
                 </p>
               </li>
 
+              <li><div class="divider"></div></li>
+
+                <p>Please provide the Name, Position, and E-mail information of all relevant parties.</p>
+            <div id="contacts">
               <li>
-                <p>
-                  <label for="website">Company Website </label>
-                  <input type="text" name="website"/>
+                <p class="pull-left">
+                  <label for="contact_name">First Name<span class="req">*</span></label>
+                  <input type="text" name="first_name_1" required/>
+                </p>
+                <p class="pull-right">
+                  <label for="contact_name">Last Name<span class="req">*</span></label>
+                  <input type="text" name="last_name_1" required/>
                 </p>
               </li>
               <li>
                 <p>
-                  <label for="file">Company Logo</label>
-                  <input type="file" name="logo"/>
+                  <label for="company">Email <span class="req">*</span></label>
+                  <input type="email" name="email_1" required/>
+                </p>
+                <p class="right">
+                  <label for="contact_name">Position<span class="req">*</span></label>
+                  <input type="text" name="position_1" placeholder="Ex: Software Engineer" required/>
                 </p>
               </li>
-              <li>
-                <label for="mission_statement">Company Mission Statement</label>
-                <textarea cols="46" rows="3" name="mission_statement"></textarea>
-              </li>
-          <li><div class="divider"></div></li>
-              <p>Please provide the Name, Role, and E-mail information of all relevant parties.</p>
-              <div id="contacts">
-                <li>
-                  <p class="left">
-                    <label for="contact_name">Full Name<span class="req">*</span></label>
-                    <input type="text" name="contact_name_1"/>
-                  </p>
-                  <p class="pull-right">
-                    <label for="contact_role">Role<span class="req">*</span></label>
-                    <input type="text" name="contact_role_1"/>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <label for="company">Email <span class="req">*</span></label>
-                    <input type="email" name="contact_email_1"/>
-                  </p>
-                </li>
+
               </div>
 
               <!-- <input id="contact_button" type="button" name="add_contact" value="+" onclick="contact_button()"/> -->
               <a id="contact_button">Add More Contacts</a>
+              <a id="remScnt" class="pull-right remove">Remove</a>
 
-          <li><div class="divider"></div></li>
-              <p>
-                Please provide all other relevant information about the product in the comments section below.
-              </p>
+              <li><div class="divider"></div></li>
+
+                <p>
+                  Please provide all other relevant information about the product in the comments section below.
+                </p>
               <li>
                 <p class="left">
                   <label for="product_name">Product Name<span class="req">*</span></label>
-                  <input type="text" name="product_name" placeholder=""  />
+                  <input type="text" name="product_name" placeholder="" required/>
                 </p>
                 <p class="pull-right">
                   <label for="product_version">Product Version<span class="req">*</span></label>
-                  <input type="text" name="product_version" placeholder=""  />
+                  <input type="text" name="product_version" placeholder="" required/>
                 </p>
               </li>
               <li>
@@ -168,25 +217,60 @@
               <li>
                 <p>
                   <label for="sla">What Service Level Agreement (SLAs) are currently provided for supported customers of this product:</label>
-                  <input type="text" name="sla" placeholder="" />
+                  <textarea cols="46" rows="3" name="sla"></textarea>
                 </p>
               </li>
               <li id="os_class">
-                <label for="os_info_1">Operating System(s) supported:</label>
-                <input type="text" name="os_info_1" placeholder="OS distribution, version" />
-                <a id="os_button">Add OS,Version</a>
+                <p>
+                  <label for="os_info_1">Operating System(s) supported:</label>
+                  <input type="text" name="os_info" placeholder="OS distribution, version" />
+                  <a id="os_button">Add OS,Version</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label for="product_description">If an IBM customer opens a support issue that involves this product, what support channels exist that IBM can engage?</label>
+                  <textarea cols="46" rows="3" name="product_description" placeholder="Please provide all relevant channels of engagement, including a support portal, phone support, or email support."></textarea>
+                </p>
+                <p>
+                  <label for="product_use_case">Describe Product Use Case</label>
+                  <textarea cols="46" rows="3" name="product_use_case" placeholder="Please define the application use cases."></textarea>
+                </p>
+                <p>
+                  <label for="unit_test_cases">Unit Test cases</label>
+                  <textarea cols="46" rows="3" name="unit_test_cases" placeholder="Please briefly describe the Unit test case."></textarea>
+                </p>
               </li>
 
           <li><div class="divider"></div></li>
 
-              <li>
-                <label for="comments">comments</label>
-                <textarea cols="46" rows="3" name="comments"></textarea>
-              </li>
-              <li>
-                <input class="btn btn-submit" type="submit" value="Submit" />
-                <small>or press <strong>enter</strong></small>
-              </li>
+              <p>
+                Reference Architecture
+              </p>
+              <p>
+                <label for="support_kerberos">Does your product support Kerberos authentication?</label>
+                <input type="text" name="support_kerberos" />
+              </p>
+              <p>
+                <label for="test_kerberos">Did you run your certification test with Kerberos configured?</label>
+                <input type="text" name="test_kerberos" />
+              </p>
+              <p>
+                <label for="hadoop">Have you modified the default ports or require any networking changes to Hadoop?</label>
+                <input type="text" name="hadoop" />
+              </p>
+              <p>
+                <label for="spark">Please describe any changes to the Spark environment needed to either make your product work OR optimize your application settings. </label>
+                <textarea cols="46" rows="3" name="spark" placeholder="command line (ex: memory, classpath), Hadoop config files, etc..)"></textarea>
+              </p>
+
+          <li><div class="divider"></div></li>
+
+          <li>
+            <input class="btn btn-submit pull-right" type="submit" value="Submit" />
+            <!-- <small>or press <strong>enter</strong></small> -->
+          </li>
+
             </ul>
           </form>
       </div>
