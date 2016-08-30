@@ -20,7 +20,6 @@ router.post('/',upload.any(),function(req,res){
 
   var company_name=req.body.company_name,
   website = req.body.website,
-  company_address = req.body.company_address,
   company_address1 = req.body.company_address1,
   company_address2 = req.body.company_address2,
   city = req.body.city,
@@ -38,10 +37,13 @@ router.post('/',upload.any(),function(req,res){
   product_date = req.body.product_date,
   sla = req.body.sla,
   os_info_1 = req.body.os_info_1,
-  product_description = 
-
-
-
+  product_description = req.body.product_description,
+  product_use_case = req.body.product_use_case,
+  unit_test_cases = req.body.unit_test_cases,
+  support_kerberos = req.body.support_kerberos,
+  test_kerberos = req.body.test_kerberos,
+  hadoop = req.body.hadoop,
+  spark = req.body.spark;
 
 
 
