@@ -15,7 +15,7 @@ router.get('/:company_name',function(req,res){
 
     res.render(path.join(__dirname,'partner_template.ejs'),{
       company_name: company,
-        website: company_info['company website'],
+        website: company_info['website'],
         mission_statement: company_info['mission statement'],
         image: company_info['image'],
         description: company_info['description']
