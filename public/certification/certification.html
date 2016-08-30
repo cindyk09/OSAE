@@ -186,7 +186,7 @@
                   <input type="text" name="position_1" placeholder="Ex: Software Engineer" required/>
                 </p>
               </li>
-
+              <hr>
               </div>
 
               <!-- <input id="contact_button" type="button" name="add_contact" value="+" onclick="contact_button()"/> -->
@@ -220,14 +220,22 @@
                   <textarea cols="46" rows="3" name="sla"></textarea>
                 </p>
               </li>
-              <li id="os_class">
-                <p>
-                  <label for="os_info_1">Operating System(s) supported:</label>
-                  <input type="text" name="os_info" placeholder="OS distribution, version" />
-                  <a id="os_button">Add OS,Version</a>
-                </p>
-              </li>
+
+              <div id="osClass">
+                <div class="os_class">
+                  <p>
+                    <label for="os_info_1">Operating System(s) supported:</label>
+                    <input type="text" name="os_info" placeholder="OS distribution, version" />
+                  </p>
+                </div>
+                <!-- <hr> -->
+              </div>
+
+              <a id="os_button">Add OS,Version</a>
+              <a id="remOS" class="pull-right remove"> Remove</a>
+              <hr>
               <li>
+                <br>
                 <p>
                   <label for="product_description">If an IBM customer opens a support issue that involves this product, what support channels exist that IBM can engage?</label>
                   <textarea cols="46" rows="3" name="product_description" placeholder="Please provide all relevant channels of engagement, including a support portal, phone support, or email support."></textarea>
