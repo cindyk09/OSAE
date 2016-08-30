@@ -19,9 +19,31 @@ router.get('/',function(req,res){
 router.post('/',upload.any(),function(req,res){
 
   var company_name=req.body.company_name,
-  company_address=req.body.company_address,
-  website=req.body.website,
-  mission_statement=req.body.mission_statement;
+  website = req.body.website,
+  company_address = req.body.company_address,
+  company_address1 = req.body.company_address1,
+  company_address2 = req.body.company_address2,
+  city = req.body.city,
+  state = req.body.state,
+  zip_code = req.body.zip_code,
+  file = req.body.file,
+  mission_statement=req.body.mission_statement,
+  description = req.body.description,
+  first_name_1 = req.body.first_name_1,
+  last_name_1 = req.body.last_name_1,
+  email_1 = req.body.email_1,
+  position_1 = req.body.position_1,
+  product_name = req.body.product_name,
+  product_version = req.body.product_version,
+  product_date = req.body.product_date,
+  sla = req.body.sla,
+  os_info_1 = req.body.os_info_1,
+  product_description = 
+
+
+
+
+
 
   console.log(req.files);
   console.log(req.body);
