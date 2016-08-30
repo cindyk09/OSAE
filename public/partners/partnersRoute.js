@@ -11,13 +11,13 @@ router.get('/:company_name',function(req,res){
   var company = req.params.company_name;
   client.redis_client.hgetall(company,function(err,obj){
     company_info=obj;
-    console.log(company_info['file']);
+    // console.log(company_info['file']);
 
     res.render(path.join(__dirname,'partner_template.ejs'),{
       company_name: company,
-        company_website: company_info['company website'],
-        file: company_info['file'],
+        website: company_info['company website'],
         mission_statement: company_info['mission statement'],
+        image: company_info['image'],
         description: company_info['description']
       });
 

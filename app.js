@@ -25,8 +25,10 @@ if (process.env.VCAP_SERVICES) {
 // TODO bluemix server use this client
 var client = redis.createClient(redis_port,redis_hostname);
 client.auth(redis_password);
+
 // TODO local server use this client
 // var client = redis.createClient();
+
 // if an error occurs, print it to the console
 client.on('error', function (err) {
     console.log("Error " + err);

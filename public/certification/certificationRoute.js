@@ -17,7 +17,7 @@ router.get('/',function(req,res){
 });
 
 router.post('/',upload.any(),function(req,res){
-
+  console.log(req.files)
   var company_name=req.body.company_name,
   website = req.body.website,
   company_address1 = req.body.company_address1,
@@ -25,8 +25,8 @@ router.post('/',upload.any(),function(req,res){
   city = req.body.city,
   state = req.body.state,
   zip_code = req.body.zip_code,
-  file = req.body.file,
-  mission_statement=req.body.mission_statement,
+  image = req.files,
+  mission_statement = req.body.mission_statement,
   description = req.body.description,
   first_name_1 = req.body.first_name_1,
   last_name_1 = req.body.last_name_1,
@@ -47,7 +47,7 @@ router.post('/',upload.any(),function(req,res){
 
 
 
-  console.log(req.files);
+  console.log(req.files.logo);
   console.log(req.body);
   // fs.readFile(req.files.logo.path,function(err,data){
 
@@ -56,7 +56,34 @@ router.post('/',upload.any(),function(req,res){
     // client.storage
   // });
   // console.log(client.redis_client);
-  // client.redis_client.hmset(company_name,'company address',company_address,'company website',website,'mission statement',mission_statement);
+  client.redis_client.hmset(
+    company_name,
+    'company website', website,
+    'company address 1', company_address1,
+    'company address 2',company_address2,
+    'city', city,
+    'state', state,
+    'zip code', zip_code,
+    'mission statement', mission_statement,
+    'description', description,
+    'first name 1', first_name_1,
+    'last name 1', last_name_1,
+    'email_1', email_1,
+    'position 1', position_1,
+    'product name', product_name,
+    'product version', product_version,
+    'product date', product_date,
+    'sla', sla,
+    'os info 1', os_info_1,
+    'product description', product_description,
+    'product_use_case', product_use_case,
+    'unit test cases', unit_test_cases,
+    'support kerberos', support_kerberos,
+    'test kerberos', test_kerberos,
+    'hadoop', hadoop,
+    'spark', spark
+
+  );
 
 
   res.redirect('/partners/'+company_name);
