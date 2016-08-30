@@ -21,7 +21,8 @@ $(document).ready(function() {
 
         $(document).on('click', '#remScnt', function() {
                 if( i > 1 ) {
-                        $(this).parents('#contacts div').remove();
+                        // $(this).parents('#contacts div').remove();
+                        $('#contacts div:last').remove();
                         i--;
                 }
                 return false;
