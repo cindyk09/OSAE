@@ -16,9 +16,9 @@ router.get('/:company_name',function(req,res){
     res.render(path.join(__dirname,'partner_template.ejs'),{
       company_name: company,
         company_website: company_info['company website'],
-        file: company_info['file']
+        file: company_info['file'],
         mission_statement: company_info['mission statement'],
-        description: company_info['description'],
+        description: company_info['description'];
       });
 
   });
