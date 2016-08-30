@@ -11,21 +11,24 @@ $(document).ready(function() {
                 return false;
         });
 
+        // $(document).on('click', '#remScnt', function() {
+        //         if( i > 1 ) {
+        //                 $(this).parents('div').first().remove();
+        //                 i--;
+        //         }
+        //         return false;
+        // });
+
         $(document).on('click', '#remScnt', function() {
                 if( i > 1 ) {
-                        $(this).remove();
+                        $(this).parents('#contacts div').remove();
                         i--;
                 }
                 return false;
         });
 
-        // $(document).on('click', '#remScnt', function() {
-        //         if( i > 1 ) {
-        //                 $(".extra_contact_'+i+'").remove();
-        //                 i--;
-        //         }
-        //         return false;
-        // });
+
+
 
             $('#remScnt').hide();
         $(document).on('click', '#contact_button', function() {
