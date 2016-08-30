@@ -18,7 +18,7 @@ router.get('/:company_name',function(req,res){
         company_website: company_info['company website'],
         file: company_info['file'],
         mission_statement: company_info['mission statement'],
-        description: company_info['description'];
+        description: company_info['description']
       });
 
   });
