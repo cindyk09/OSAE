@@ -23,11 +23,11 @@ if (process.env.VCAP_SERVICES) {
     var obj_region=env['Object-Storage'][0]['credentials'].region;
 }
 // TODO bluemix server use this client
-var client = redis.createClient(redis_port,redis_hostname);
-client.auth(redis_password);
+// var client = redis.createClient(redis_port,redis_hostname);
+// client.auth(redis_password);
 
 // TODO local server use this client
-// var client = redis.createClient();
+var client = redis.createClient();
 
 // if an error occurs, print it to the console
 client.on('error', function (err) {
@@ -52,10 +52,16 @@ var pkgcloud = require('pkgcloud');
 
 //export object storage client and redis client -> used in routes
 module.exports={obj_client: storageClient, redis_client: client};
-// SETTING TEMPLATE ENGINE - EJS ENGINE
+
+
+// SETTING EJS ENGINE AND ROUTING
 app.use(express.static(__dirname + '/public')); // serve the files out of ./public as our main files
+app.use('/certification', require('./public/certification/certificationRoute'));
+app.use('/partners', require('./public/partners/partnersRoute'));
+
 app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
+
 // get the app environment from Cloud Foundry
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and sets the mime type based n the file extname
@@ -64,9 +70,11 @@ app.get('/', function(req, res){
       res.status(500).send(err);
     }
   })
+
 });
-app.use('/certification', require('./public/certification/certificationRoute'));
-app.use('/partners', require('./public/partners/partnersRoute'));
+
+
+
 // TODO ALSO WHEN PUSHING TO BLUEMIX, CHANGE config.js file. Some parts of code need to be changed from 'public' to 'internal'
 var cfenv = require('cfenv');
 var appEnv = cfenv.getAppEnv();

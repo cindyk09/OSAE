@@ -20,6 +20,16 @@ div, textarea, input {
   /*border: 1px solid #cfcfcf;*/
   border-bottom: 3px solid #ccc;
 }
+/*
+.container-fluid {
+  margin-left: 15px;
+  margin-right: 15px;
+}*/
+
+#mainNav{
+  margin-left: 15px;
+  margin-right: 15px;
+}
 
 /*.row {
   width: 100%;
