@@ -155,7 +155,7 @@ aside{
   }
 }
 
-#mainNav{
+#divNav{
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -339,7 +339,7 @@ header .header-content .header-content-inner p{
 
 /*partners container*/
 #partners{
-  background-color:#D6D6D6;
+  background-color:rgba(85, 150, 230, 0.20);
   display: flex;
   }
 
