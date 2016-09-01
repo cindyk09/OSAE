@@ -23,11 +23,11 @@ if (process.env.VCAP_SERVICES) {
     var obj_region=env['Object-Storage'][0]['credentials'].region;
 }
 // TODO bluemix server use this client
-var client = redis.createClient(redis_port,redis_hostname);
-client.auth(redis_password);
+// var client = redis.createClient(redis_port,redis_hostname);
+// client.auth(redis_password);
 
 // TODO local server use this client
-// var client = redis.createClient();
+var client = redis.createClient();
 
 // if an error occurs, print it to the console
 client.on('error', function (err) {
