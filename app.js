@@ -53,7 +53,6 @@ var pkgcloud = require('pkgcloud');
 //export object storage client and redis client -> used in routes
 module.exports={obj_client: storageClient, redis_client: client};
 
-
 // SETTING EJS ENGINE AND ROUTING
 app.use(express.static(__dirname + '/public')); // serve the files out of ./public as our main files
 app.use('/certification', require('./public/certification/certificationRoute'));
