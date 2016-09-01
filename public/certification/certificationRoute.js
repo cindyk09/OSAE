@@ -13,7 +13,9 @@ var router = express.Router();
 
 
 router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/certification.html'));
+  
+  res.render(path.join(__dirname,'certification.ejs'));
+
 });
 
 router.post('/',upload.any(),function(req,res){

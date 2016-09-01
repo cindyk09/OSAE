@@ -59,18 +59,13 @@ app.use(express.static(__dirname + '/public')); // serve the files out of ./publ
 app.use('/certification', require('./public/certification/certificationRoute'));
 app.use('/partners', require('./public/partners/partnersRoute'));
 
-app.set('views', path.join(__dirname, '/public/views'));
+// app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'ejs');
 
 // get the app environment from Cloud Foundry
 app.get('/', function(req, res){
   // res.sendFile takes an absolute path to a file and sets the mime type based n the file extname
-  res.sendFile(__dirname + 'index.html', function(err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  })
-
+  res.render(path.join(__dirname,'/public/index.ejs'));
 });
 
 
